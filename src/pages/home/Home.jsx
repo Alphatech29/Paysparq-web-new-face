@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShieldHalved, faMeteor,faHeadset,faGaugeHigh} from '@fortawesome/free-solid-svg-icons';
 import { Button} from "flowbite-react";
 import { HiOutlineArrowRight} from "react-icons/hi";
+import { motion } from "framer-motion";
 
 
 
@@ -62,8 +63,23 @@ function Home() {
       <p className="pt-4 tex-3xl font-interSB font-medium text-secondary">Experience fee-free trading with instant payments, secure device authorization, 24/7 customer support, real-time updates, and seamless transactions for coins like Bitcoin, USDT, USDC, Pi, and more – all in one platform.</p>
       <Button size="xs" className="bg-primary-600 mt-3 p-2 text-lg hover:border-dash">Trade Now <HiOutlineArrowRight className="ml-2 h-5 w-5" /></Button>
       </div>
-      <div className="w-1/3">
-      <img src="/image/bitcoin_app2_y0tkz4.png" width={400} alt="bitcoin" loading="lazy" />
+      <div className=" flex items-end">
+      <motion.img src="/image/bitcoin_app2_y0tkz4.png" 
+      width={400} alt="bitcoin" 
+      loading="lazy"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ 
+        opacity: [0.5, 1, 0.5], 
+        scale: [0.9, 1, 0.9], 
+        rotate: [0, 10, -10, 0] 
+      }}
+      transition={{ 
+        duration: 4,
+        repeat: Infinity, 
+        repeatType: "loop", 
+        ease: "easeInOut" 
+      }}
+       />
       </div>
     </div>
     <div className="w-full px-24 pt-20 flex justify-center items-center">
