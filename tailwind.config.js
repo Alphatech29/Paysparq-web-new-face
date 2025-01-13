@@ -21,7 +21,16 @@ export default {
         text: '#ffffff',
         dash: '#ffc76d',
         borrow: '#0f172a',
-
+      },
+      keyframes: {
+        'border-animation': {
+          '0%': { borderColor: '#F66B04' }, // Primary color
+          '50%': { borderColor: '#451805' }, // Secondary color
+          '100%': { borderColor: '#FCEDD4' }, // Paysparq color
+        },
+      },
+      animation: {
+        'border-animation': 'border-animation 3s infinite',
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

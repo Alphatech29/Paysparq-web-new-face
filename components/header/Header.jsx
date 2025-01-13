@@ -18,7 +18,7 @@ function Header() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 ${
+      className={`fixed top-0 left-0 w-full z-40 ${
         scrolled ? "bg-primary-100" : "bg-transparent"
       } backdrop-blur-md transition-all duration-300 pt-1`}
       style={{
