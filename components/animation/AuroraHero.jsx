@@ -27,13 +27,13 @@ export const AuroraHero = () => {
       style={{
         backgroundImage,
       }}
-      className="relative grid min-h-screen top-0 pt-64 place-content-center overflow-hidden bg-gray-950 px-4 py-24 text-gray-200"
+      className="relative grid min-h-screen top-0 pt-60 place-content-center overflow-hidden bg-gray-950 px-4 py-24 text-gray-200"
     >
       <div className="relative z-10 flex flex-col items-center">
-        <h1 className="max-w-4xl text-interB bg-gradient-to-br from-white to-gray-400 bg-clip-text text-center text-6xl font-bold leading-tight">
+        <h1 className="max-w-4xl text-interB bg-gradient-to-br from-white to-gray-400 bg-clip-text text-center text-5xl font-bold leading-tight">
         Your Gateway to Gift Card Trading, Crypto Excellence, and Easy Bill Payments!
         </h1>
-        <p className="my-6 max-w-2xl text-center text-3xl leading-relaxed md:text-lg md:leading-relaxed">
+        <p className="my-6 max-w-2xl text-center text-xl leading-relaxed md:text-lg md:leading-relaxed">
         Paysparq: Nigeria`s top platform for crypto and gift card trading. Securely trade Bitcoin, Ethereum, USDT, and more, with easy international payments.
         </p>
         <motion.button
@@ -49,7 +49,7 @@ export const AuroraHero = () => {
           }}
           className="group relative flex w-fit items-center gap-1.5 rounded-full bg-gray-950/10 px-4 py-2 text-gray-50 transition-colors hover:bg-gray-950/50"
         >
-          Getting Started
+          <a href="/auth/sign-up">Getting Started</a>
           <FiArrowRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
         </motion.button>
       </div>

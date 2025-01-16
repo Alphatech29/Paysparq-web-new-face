@@ -27,14 +27,20 @@ function Header() {
     >
       <div className="px-24 flex flex-wrap items-center justify-between mx-auto">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/image/footer-logo.png" className="h-16" alt="Paysparq Logo" />
+          <img src="/image/footer-logo.png" className="h-12" alt="Paysparq Logo" />
         </a>
 
-        <div className="nav-menu md:block md:w-auto justify-center">
-          <ul className="font-medium text-lg font-interSB flex p-4 md:p-0 md:flex-row md:space-x-8 rtl:space-x-reverse">
+        <div className="nav-menu md:block md:w-auto justify-center items-center flex">
+         <div>
+         <ul className="font-medium text-base font-interSB flex p-4 md:p-0 md:flex-row md:space-x-8 rtl:space-x-reverse">
             <li>
               <a href="/" className="py-1 text-white" aria-current="page">
                 Home
+              </a>
+            </li>
+            <li>
+              <a href="#" className="py-1 text-white">
+                Products
               </a>
             </li>
             <li>
@@ -44,20 +50,14 @@ function Header() {
             </li>
             <li>
               <a href="#" className="py-1 text-white">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#" className="py-1 text-white">
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a href="#" className="py-1 text-white">
                 Contact
               </a>
             </li>
           </ul>
+         </div>
+         <div className="pl-2">
+         <a href="/auth/sign-in" className="text-white text-base bg-primary-600 rounded-md px-5 py-2 hover:border hover:border-primary-600 hover:bg-transparent !hover:border-primary-600">Login</a>
+         </div>
         </div>
       </div>
     </nav>
