@@ -8,7 +8,7 @@ export default function LoadingScreen() {
     // Simulate a delay for loading (e.g., fetching data or waiting for resources)
     const timer = setTimeout(() => {
       setLoading(false); // Set loading to false after 3 seconds (or once content is ready)
-    }, 5000);
+    }, 2000);
 
     // Clear timeout if the component unmounts early
     return () => clearTimeout(timer);
@@ -33,7 +33,7 @@ export default function LoadingScreen() {
             <motion.img
               src="/image/favicon.png"
               alt="Logo"
-              className="w-16 h-16"
+              className="w-10 h-10"
               animate={{
                 scale: [1, 1.2, 1], // Pulsing animation for the logo
               }}
