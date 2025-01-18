@@ -4,23 +4,22 @@ import ErrorBoundary from './utils/ErrorBoundary';
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import Home from './pages/home/home';
+import Dashboard from './pages/user/dashboard/Dashboard';
 import NotFound from './pages/NotFound';
 import SignUp from './pages/auth/SignUp';
 import SignIn from './pages/auth/SignIn';
 import Preload from '../components/preload/Preload'; 
+import PrivateRoute from './utils/authContext.jsx'
 import '@fontsource/inter/400.css'; 
 import '@fontsource/inter/500.css'; 
 import '@fontsource/inter/600.css'; 
 import '@fontsource/inter/700.css'; 
 
 
-function Layout({ children }) {
-  const location = useLocation();
-  const hideHeaderFooter = location.pathname.startsWith('/auth') || location.pathname === '*';
-
+function Layout({ children, hideHeaderFooter, hidePreload }) {
   return (
     <>
-      <Preload />
+      {!hidePreload && <Preload />}
       {!hideHeaderFooter && <Header />}
       {children}
       {!hideHeaderFooter && <Footer />}
@@ -30,23 +29,54 @@ function Layout({ children }) {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  hideHeaderFooter: PropTypes.bool,  // Add the hideHeaderFooter prop here
+  hidePreload: PropTypes.bool,  // Add the hidePreload prop here
 };
+
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  hideHeaderFooter: PropTypes.bool,  // Add the hideHeaderFooter prop here
+};
+
 
 function App() {
   return (
     <ErrorBoundary>
       <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="auth/sign-up" element={<SignUp />} />
-            <Route path="auth/sign-in" element={<SignIn />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route
+            path="/"
+            element={<Layout hideHeaderFooter={false} hidePreload={false}><Home /></Layout>}
+          />
+          <Route
+            path="auth/sign-up"
+            element={<Layout hideHeaderFooter={true} hidePreload={false}><SignUp /></Layout>}
+          />
+          <Route
+            path="auth/login"
+            element={<Layout hideHeaderFooter={true} hidePreload={false}><SignIn /></Layout>}
+          />
+          <Route
+            path="*"
+            element={<Layout hideHeaderFooter={false} hidePreload={false}><NotFound /></Layout>}
+          />
+          <Route
+            path="user/dashboard"
+            element={
+              <Layout hideHeaderFooter={true} hidePreload={true}>
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              </Layout>
+            }
+          />
+        </Routes>
       </Router>
     </ErrorBoundary>
   );
 }
+
+
 
 export default App;

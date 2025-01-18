@@ -56,7 +56,7 @@ function Header() {
           </ul>
          </div>
          <div className="pl-2">
-         <a href="/auth/sign-in" className="text-white text-base bg-primary-600 rounded-md px-5 py-2 hover:border hover:border-primary-600 hover:bg-transparent !hover:border-primary-600">Login</a>
+         <a href="/auth/login" className="text-white text-base bg-primary-600 rounded-md px-5 py-2 hover:border hover:border-primary-600 hover:bg-transparent !hover:border-primary-600">Login</a>
          </div>
         </div>
       </div>

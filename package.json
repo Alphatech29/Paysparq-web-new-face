@@ -19,7 +19,7 @@
     "@mui/icons-material": "^6.3.1",
     "@mui/material": "^6.3.1",
     "@react-three/drei": "^9.120.7",
-    "@supabase/supabase-js": "^2.47.15",
+    "@supabase/supabase-js": "^2.47.16",
     "animejs": "^3.2.2",
     "axios": "^1.7.9",
     "flowbite": "^2.5.2",
@@ -33,6 +33,7 @@
     "react-router-dom": "^7.1.1",
     "react-select": "^5.9.0",
     "react-select-country-list": "^2.2.3",
+    "react-toastify": "^11.0.3",
     "vite": "^5.0.0"
   },
   "devDependencies": {
