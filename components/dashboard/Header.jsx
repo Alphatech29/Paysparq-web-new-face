@@ -1,22 +1,26 @@
-import React from 'react'
+import React from "react";
 import { Avatar, Dropdown } from "flowbite-react";
-import { logout } from '../../superBase/auth/signIn';
+import NotificationsIcon from "@mui/icons-material/Notifications";
 
 function Header() {
+ 
+
   return (
-    <div className='w-full bg-primary-600 px-14 py-20 h-16 flex items-center justify-between'>
-      <div><img src="/image/footer-logo.png" alt=""  className='h-12 pl-9'/></div>
-      <div className='flex items-center justify-center gap-3'>
-        <Avatar img="/images/people/profile-picture-5.jpg" className='pr-9' />
-      <Dropdown label="CEO Alphatech" inline className='!mr-3 !pr-9 text-white text-base'>
-      <Dropdown.Item>profile</Dropdown.Item>
-      <Dropdown.Item>Settings</Dropdown.Item>
-      <Dropdown.Item>Earnings</Dropdown.Item>
-      <Dropdown.Item onClick={logout}>Sign out</Dropdown.Item>
-    </Dropdown>
+    <div className="w-[81.5%] h-auto bg-pay px-5 py-1 flex items-center justify-between border-b shadow border-b-primary-600 fixed top-0 right-0 z-10">
+      <div className="flex items-center justify-center gap-3">
+       
+      </div>
+      <div className="flex items-center justify-center gap-5">
+        <span className="p-2 bg-primary-600 text-pay text-sm rounded-lg font-interSB">$100,000.00</span>
+        <Avatar img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded alt="Profile Picture" />
+        
+        <div className="flex items-center gap-2">
+          <NotificationsIcon />
+          <span className="text-red-600">0</span>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

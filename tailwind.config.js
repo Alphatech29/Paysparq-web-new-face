@@ -3,10 +3,8 @@ import flowbite from "flowbite/plugin";
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./node_modules/flowbite/**/*.js", 
-    "./node_modules/flowbite-react/**/*.js", 
     "./src/**/*.{js,jsx,ts,tsx}", 
-    "./components/**/*.html", 
+    "./components/**/*.{js,jsx,ts,tsx}", 
   ],
   theme: {
     extend: {
@@ -21,6 +19,7 @@ export default {
         text: '#ffffff',
         dash: '#ffc76d',
         borrow: '#0f172a',
+        pay: '#fff9ec'
       },
       keyframes: {
         'border-animation': {
