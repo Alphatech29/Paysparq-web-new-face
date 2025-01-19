@@ -49,7 +49,7 @@ const SignIn = () => {
       </div>
       <div className="bg-paysparq p-20 flex justify-center h-full items-center w-3/5 flex-col border">
         <a href="/">
-          <img src="/image/paysparq-logo.png" alt="" loading="lazy" className="h-20 pb-8" />
+          <img src="/image/paysparq-logo.png" alt="" loading="lazy" className="h-20 pb-8 z-50" />
         </a>
         <div className="justify-start items-center border-primary-600 border p-10 rounded-lg">
           <h2 className="text-xl text-secondary font-interSB pb-6 text-center">Welcome Back!</h2>
