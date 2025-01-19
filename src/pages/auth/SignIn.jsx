@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Label, TextInput, Button, Checkbox } from 'flowbite-react';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { signIn } from '../../../superBase/auth/signIn.js';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,31 +10,17 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false); // Remember Me state
+  const [rememberMe, setRememberMe] = useState(false); 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Ensure email and password are provided
-    if (!email || !password) {
-      toast.error('Please enter both email and password.');
-      return;
-    }
-
-    setLoading(true);
-    try {
-      const response = await signIn(email, password, rememberMe); // Pass rememberMe
-
-      if (response.success) {
-        setEmail('');
-        setPassword('');
-      }
-    } catch (error) {
-      console.error('Unexpected error signing in:', error);
-      toast.error('Unexpected error signing in. Please try again.');
-    } finally {
-      setLoading(false);
-    }
+    const formData = {
+      email,
+      password,
+      rememberMe,
+    };
+    console.log(formData);
+    // Add your form submission logic here
   };
 
   return (

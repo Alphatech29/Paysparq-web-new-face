@@ -4,12 +4,10 @@ import ErrorBoundary from './utils/ErrorBoundary';
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import Home from './pages/home/home';
-import Dashboard from './pages/user/dashboard/Dashboard';
 import NotFound from './pages/NotFound';
 import SignUp from './pages/auth/SignUp';
 import SignIn from './pages/auth/SignIn';
 import Preload from '../components/preload/Preload'; 
-import PrivateRoute from './utils/authContext.jsx'
 import '@fontsource/inter/400.css'; 
 import '@fontsource/inter/500.css'; 
 import '@fontsource/inter/600.css'; 
@@ -60,16 +58,6 @@ function App() {
           <Route
             path="*"
             element={<Layout hideHeaderFooter={false} hidePreload={false}><NotFound /></Layout>}
-          />
-          <Route
-            path="user/dashboard"
-            element={
-              <Layout hideHeaderFooter={true} hidePreload={true}>
-                <PrivateRoute>
-                  <Dashboard />
-                </PrivateRoute>
-              </Layout>
-            }
           />
         </Routes>
       </Router>

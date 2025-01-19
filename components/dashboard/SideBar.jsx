@@ -5,20 +5,12 @@ import { FaBitcoin } from "react-icons/fa";
 import { CiCreditCard1,CiBank } from "react-icons/ci";
 import { MdManageAccounts,MdOutlineAccountTree,MdPayments } from "react-icons/md";
 import { IoIosAddCircleOutline } from "react-icons/io";
-import { toast } from 'react-toastify';
-import { logout } from "../../superBase/auth/signIn";
 
 
 
 
 const SideBar = () => {
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      toast.error("Logout failed:", error);
-    }
-  };
+ 
   return (
     <div className='bg-paysparq w-64 h-screen fixed flex flex-col items-start justify-start px-4 z-20'>
        <div className='pt-1 pb-5'>
@@ -73,7 +65,7 @@ const SideBar = () => {
     </div>
   } inline  className="bg-pay border-none shadow-none">
       <Dropdown.Item icon={MdManageAccounts}  className='hover:bg-primary-600 hover:text-paysparq hover:rounded-lg'>Account Settings</Dropdown.Item>
-      <Dropdown.Item icon={HiLogout} onClick={handleLogout}>Sign out</Dropdown.Item>
+      <Dropdown.Item icon={HiLogout} >Sign out</Dropdown.Item>
     </Dropdown>
    </div>
     </div>

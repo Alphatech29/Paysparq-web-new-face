@@ -6,7 +6,6 @@ import Select from 'react-select';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { signUp } from '../../../superBase/auth/signUp.js';
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -47,51 +46,24 @@ const SignUp = () => {
     fetchCountries();
   }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    // Validation
-    if (!termsAccepted) {
-      toast.error('You must accept the terms and conditions.');
-      return;
-    }
-  
-    if (!name || !email || !password || !phone || !country) {
-      toast.error('Please fill in all required fields.');
-      return;
-    }
-  
-    // user data
-    const userData = {
+  const collectFormValues = () => {
+    return {
       name,
       email,
       password,
-      country: country.value, 
+      country,
       phone,
       referral,
+      termsAccepted,
     };
-  
-    try {
-      const response = await signUp(userData);
-      if (response.error) {
-        toast.error(`Sorry, Signup failed: ${response.error}`);
-      } else {
-        toast.success('Registration successful!');
-        // Reset form fields
-        setName('');
-        setEmail('');
-        setPassword('');
-        setCountry(null);
-        setPhone('');
-        setReferral('');
-        setTermsAccepted(false);
-      }
-    } catch (error) {
-      console.error('Signup error:', error);
-      toast.error('An error occurred during signup.');
-    }
   };
-  
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formValues = collectFormValues();
+    console.log(formValues);
+    // Add your form submission logic here
+  };
 
   return (
     <div className="bg-primary-600 w-full h-full flex justify-center items-center cover relative">
