@@ -53,11 +53,14 @@ function Header() {
                 Contact
               </a>
             </li>
+            <li>
+              <a href="/auth/login" className="text-white text-base bg-primary-600 rounded-md px-5 py-2 hover:border hover:border-primary-600 hover:bg-transparent !hover:border-primary-600">
+                Login
+              </a>
+            </li>
           </ul>
          </div>
-         <div className="pl-2">
-         <a href="/auth/login" className="text-white text-base bg-primary-600 rounded-md px-5 py-2 hover:border hover:border-primary-600 hover:bg-transparent !hover:border-primary-600">Login</a>
-         </div>
+        
         </div>
       </div>
     </nav>
